@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 .agenda{
     padding: 20px;
     border: 0;
@@ -19,6 +23,10 @@
 
 .coluna-esquerda{
     position: relative;
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .lista-horarios{
@@ -44,4 +52,25 @@
 .horario-btn.ocupado{
     background-color:#f0f2f5;
     cursor: not-allowed;
+}
+
+.agenda-hora{
+    padding: 8px 20px;
+    border-radius: 6px;
+    border: none;
+}
+
+.criar-hora-btn{
+    display: block;
+    margin-top:20px ;
+    width:100%;
+    padding: 10px ;
+    border-radius: 6px;
+    border: 0;
+    cursor: pointer;
+}
+
+.criar-horario-painel,.listagem-horario-painel{
+    border: 1px solid red;
+    padding: 10px 10px 10px;
 }
