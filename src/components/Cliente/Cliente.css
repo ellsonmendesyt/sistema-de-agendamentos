@@ -1,0 +1,123 @@
+:root {
+    --verde: #37b549;
+    --azul: #2b46d5;
+    --fundo: rgba(246,246,249,1);
+    --branco: #fff;
+    --raio: 4px;
+    --tamanho-fonte: 14px;
+    --btn-azul: #2b46d5;
+    --btn-raio: 20px;
+    --azul-enfase: #8e8ec3;
+    --vermelho: #f44236;
+    --azul-oceano: #008ad2;
+    --acinzentado: #f6f6f8;
+}
+
+.card_cliente{
+    /* border: 1px solid #dddfe2; */
+    max-width: 300px;
+    padding: 20px;
+    background: var(--acinzentado);
+    border-radius: 8px;
+    box-shadow:0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+}
+.card_cliente-body{
+    display: flex;
+    position: relative;
+}
+
+.card_cliente-body .card_cliente-avatar{
+    flex: 1;
+    /* border: 1px solid #ddd; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card_cliente-body .card_cliente-info{
+    flex:2;
+}
+.card_cliente-body .card_cliente-info p{
+    margin: 5px;
+    font-size: .9rem;
+}
+.card_cliente-acoes{
+    flex: .3;
+    position: absolute;
+    top:-10px;
+    right: -10px;
+}
+.card_cliente-acoes .acoes_btn{
+ width: 30px;
+ height: 30px;
+ border-radius: 50%;
+ border:0;
+ font-size: 1.2rem;
+ display: flex;
+ justify-content: center;
+ vertical-align: center;
+ transform: rotate(90deg);
+ cursor: pointer;
+
+}
+
+
+
+.submenu{
+ opacity: 0;
+   position: absolute;
+   top:2rem;
+   right: 1rem;
+    /* border: 1px solid #ddd; */
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 4px;
+    display: block;
+}
+
+.submenu_top{
+    margin: 0;
+    padding: 0;
+}
+.submenu_top button{
+    border: 0;
+    font-size: 1.1rem;
+    position: absolute;
+    top:0;
+    right:-1.2rem;
+    background-color: transparent;
+    cursor: pointer;
+}
+.submenu_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+
+
+
+
+.submenu_content button{
+    margin-bottom: 10px;
+}
+
+.submenu.show{
+    opacity: 1;
+}
+
+.card_cliente-avatar .avatar_foto{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    /* border: 1px solid red; */
+    margin-right: 10px;
+  
+}
+
+.card_cliente-avatar .avatar_foto img{
+    width:70;
+    display: block;
+    height: 70px;
+    border-radius: 50%;
+
+}

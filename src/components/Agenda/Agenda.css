@@ -1,0 +1,7 @@
+.agenda{
+    background-color: cornflowerblue;
+    min-height: 400px;
+    color: red;
+
+    display: flex;
+}

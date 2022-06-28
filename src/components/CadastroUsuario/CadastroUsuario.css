@@ -1,0 +1,37 @@
+.cadastro_cliente{
+    background-color: #fff;
+    padding: 10px 20px;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+    box-shadow:0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+}
+
+.cadastro_form-cliente{
+    display: flex;
+    flex-direction: column;
+}
+.cadastro_form-cliente > *{
+    margin-bottom: 1rem;
+    padding: .3rem 1rem;
+}
+
+.salvar{
+    background-color: #00a400;
+    border-radius: 4px;
+    border:0;
+    color: #fff;
+    font-weight: bold;
+    padding: .7rem ;
+}
+.savlar:hover{
+    background-color: #13e2c0f3;
+}
+
+.cadastro_title{
+    color:#767676;
+    font-weight: 500;
+    text-align: center;
+    font-size: 1.6rem;
+}

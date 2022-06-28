@@ -1,0 +1,89 @@
+:root{
+    --topbar-altura:30px;
+}
+
+
+.container{
+    display: grid;
+    border: 1px solid tomato;
+
+    grid-template-columns: repeat(12, 1fr);
+
+   
+    
+}
+
+.topbar{
+  grid-column:span 12;
+
+  z-index: 10000;
+  background-color: #fff;
+  border-bottom: 2px solid #ddd;
+  padding: 10px 125px;
+  background-image: url('../../../public/imgs/Banner-Unlock-bg.jpg');
+  background-position: 0 0;
+  background-size: 100%;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* .navbar{
+    grid-column:12/-1 ;
+    grid-row: 2/10;
+    background-color: crimson;
+    z-index: 99999;
+} */
+
+.main-content{
+  
+    /* background:tomato; */
+    grid-column: 2/13;
+   
+    overflow-y: auto;
+    min-height: 200vh;
+
+    padding: 30px ;
+}
+
+
+.footer{
+    background-color: olive;
+    grid-column: 1/-1;
+    grid-row: 10/12;
+}
+
+.sidebar{
+    /* background-color: royalblue; */
+   grid-column: 1/2;
+   grid-row:2/3;
+    
+   padding: 0px 10px;
+   
+
+    
+}
+
+.sidebar ul{
+    border: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.sidebar li{
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+.sidebar li a{
+    text-decoration: none;
+    color: orange;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+
+
+

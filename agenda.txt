@@ -1,0 +1,114 @@
+import React from "react";
+import "./Agenda.css";
+
+import getDay from "date-fns/getDay";
+
+import DatePicker from "react-datepicker";
+import ptBR from "date-fns/locale/pt-BR";
+import "react-datepicker/dist/react-datepicker.css";
+import axios from "axios";
+import { useParams } from "react-router-dom";
+
+const Agenda = () => {
+  let params = useParams();
+
+  const [dataInicial, setDataInicial] = React.useState(null);
+  const [horarios, setHorarios] = React.useState([]);
+
+  const buscarAgendaDoDia = async (date) => {
+  
+    
+    try {
+      // console.log(date.slice(0,10))
+      const res = await axios.get(`http://localhost:5000/api/agendas/${new Date(date).toISOString().slice(0, 10)}`);
+    
+        setHorarios(res.data.horarios);
+        
+     
+      // console.log(res.data.horarios);
+
+    } catch (error) {
+      // console.log(error);
+    }
+  };
+
+  const deSegundaASabado = (data) => {
+    const day = getDay(data);
+    return day !== 0;
+  };
+
+  const deSegundaASexta = (data) => {
+    const day = getDay(data);
+    return day !== 0 && day !== 6;
+  };
+
+  const formatarData = (data) => {
+    
+    // data.setHours(0);
+    // data.setMinutes(0);
+    // data.setSeconds(0);
+    setDataInicial(data);
+  };
+
+  const agendarHorario = async (data) => {
+    if (!data) {
+      alert("Selecione uma data");
+      return;
+    }
+
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/api/agendas/criar_agenda",
+        data
+      );
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  React.useEffect(() => {
+    buscarAgendaDoDia(dataInicial);
+  },[dataInicial])
+
+
+  return (
+    <div className="agenda">
+      <h1>Agendamento </h1>
+
+      <DatePicker
+        locale={ptBR}
+        // onSelect={(date) => formatarData(date)}
+        selected={dataInicial}
+        onChange={(date) => formatarData(date)}
+        dateFormat="MM/dd/yyyy"
+        placeholderText="Mês do agendamento"
+        shouldCloseOnSelect={false}
+        // minDate={dataInicial}
+        filterDate={deSegundaASexta}
+      />
+      <ul>
+      {
+          horarios.length > 0 && horarios.map((horario, i) => {
+            console.log(horario)
+          return(
+            <div key={i}>
+              {
+                horario?.hora ? <h2>{horario.hora}</h2> : <h2>Horário não definido</h2>
+               
+              }
+              
+              </div>
+          )} )}
+     </ul>
+
+
+
+      {/* <button onClick={() => agendarHorario(dataInicial)}>Salvar</button> */}
+
+
+    </div>
+  );
+};
+
+export default Agenda;
