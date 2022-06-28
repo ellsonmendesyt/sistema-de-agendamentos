@@ -1,0 +1,43 @@
+.btn-pontos{
+    border-radius: 50%;
+    border: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff0;
+    color: #3337;
+    cursor: pointer;
+    position: relative;
+}
+
+.btn-pontos:after{
+
+    position: absolute;
+    content: "";
+    /* color:red; */
+    width:40px;
+    height: 40px;
+    background: #fff1;
+    border-radius: 50%;
+    top:0px;
+    left: 0px;
+    transform: scale(.2);
+}
+
+.btn-pontos:hover:after{
+    animation: crescer .2s ease both;
+}
+
+@keyframes crescer{
+    from{
+        transform: scale(0);
+        opacity: 0;
+    }
+    to{
+        transform: scale(1);
+        opacity: 1;
+       
+    }
+}

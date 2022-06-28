@@ -1,7 +1,47 @@
 .agenda{
-    background-color: cornflowerblue;
+    padding: 20px;
+    border: 0;
     min-height: 400px;
     color: red;
 
     display: flex;
+    justify-content:space-around;
+    align-items: center;
+    margin: 0;
+
+    background:linear-gradient(to bottom, #0157eb98 90%, #3159d1a4), url("../../../public/imgs/hero1.jpg") no-repeat left top ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+   border: 1px solid orange;
+
+}
+
+.coluna-esquerda{
+    position: relative;
+}
+
+.lista-horarios{
+    background-color: #fff;
+    list-style: none;
+}
+
+.lista-horarios{
+    padding: 10px;
+}
+.lista-horarios > *{
+    margin-bottom: 20px;
+}
+.horario-btn{
+    background-color: #d9fdd3;
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.horario-btn.ocupado{
+    background-color:#f0f2f5;
+    cursor: not-allowed;
 }
